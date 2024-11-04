@@ -62,6 +62,7 @@ impl Frame {
         }
     }
 
+    // Redis序列化协议：RESP
     /// Checks if an entire message can be decoded from `src`
     pub fn check(src: &mut Cursor<&[u8]>) -> Result<(), Error> {
         match get_u8(src)? {
